@@ -1043,10 +1043,6 @@
                 width: calc(50% + (var(--gutters) / 2));
             }
             
-            #container05 {
-                min-height: 74vh;
-            }
-            
             @media (max-width: 1920px) {
             }
             
@@ -1440,6 +1436,42 @@
                     --gutters: calc(var(--padding-vertical) * 2);
                 }
             }
+            
+            
+            /* 1. Stretch the wrapper to fill the full viewport height */
+            #container05 {
+                align-items: stretch !important;
+            }
+            
+            
+            /* 2. Turn the wrapper into a flex column to manage vertical spacing */
+            #container05 > .wrapper {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            /* 3. Vertically center the main content by using auto margins */
+            #container05 > .wrapper > .inner {
+                margin-top: auto !important;
+                margin-bottom: auto !important;
+            }
+            
+            /* 4. Apply the same responsive padding variables used by .inner */
+            #hero-footer {
+                padding-left: var(--padding-horizontal);
+                padding-right: var(--padding-horizontal);
+                padding-bottom: var(--padding-vertical); /* Gives bottom breathing room */
+                width: 100%;
+            }
+            
+            /* always visible  hero-footer */
+            #container05 > .wrapper > #hero-footer * {
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: none !important;
+                transition: none !important;
+            }
+            
         </style>
         <noscript>
             <style>body {overflow: auto !important;}body::after {display: none !important;}.site-main > .inner {opacity: 1.0 !important;}.site-main {opacity: 1.0 !important;transform: none !important;transition: none !important;filter: none !important;}</style>
@@ -1477,20 +1509,20 @@
                             <div class="inner" data-onvisible-trigger="1">
                                 <h1 id="text07" class="text-component instance-7 style-2">AppHive</h1>
                                 <p id="text01" class="text-component instance-1 style-1">delightful mobile experiences. one app at a time</p>
-                                <!--
+                            </div>
+                            <div id="hero-footer">
                                 <ul id="buttons02" class="buttons-component instance-2 style-1">
-                                <li><a href="index.html#one" class="n01" role="button"><svg aria-labelledby="buttons02-icon-1-title"><title id="buttons02-icon-1-title">Arrow Down (Light)</title><use xlink:href="#icon-arrow-down"></use></svg><span class="label">Explore</span></a></li>
-                                <li>
-                                <span class="n01">
-                                <svg aria-labelledby="buttons02-icon-1-title">
-                                <title id="buttons02-icon-1-title">Arrow Down (Light)</title>
-                                <use xlink:href="#icon-arrow-down"></use>
-                                </svg>
-                                <span class="label">explore</span>
-                                </span>
-                                </li>
+                                    <!-- <li><a href="index.html#one" class="n01" role="button"><svg aria-labelledby="buttons02-icon-1-title"><title id="buttons02-icon-1-title">Arrow Down (Light)</title><use xlink:href="#icon-arrow-down"></use></svg><span class="label">Explore</span></a></li> -->
+                                    <li>
+                                        <span class="n01">
+                                            <svg aria-labelledby="buttons02-icon-1-title">
+                                                <title id="buttons02-icon-1-title">Arrow Down (Light)</title>
+                                                <use xlink:href="#icon-arrow-down"></use>
+                                            </svg>
+                                            <span class="label">explore</span>
+                                        </span>
+                                    </li>
                                 </ul>
-                                -->
                             </div>
                         </div>
                     </div>
