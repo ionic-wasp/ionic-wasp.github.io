@@ -1471,6 +1471,80 @@
                 transition: none !important;
             }
             
+            /* Custom Responsive Footer Layout - Force One Line */
+            .footer-layout {
+                padding: 2.25rem var(--padding-horizontal) !important;
+                display: flex !important;
+                flex-direction: row !important; /* Forces side-by-side */
+                justify-content: space-between !important;
+                align-items: center !important;
+                flex-wrap: nowrap !important; /* Prevents splitting to a new line */
+                gap: 1.5rem !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            
+            .footer-copyright {
+                white-space: nowrap !important; /* Keeps copyright whole */
+                font-family: 'Inter', sans-serif;
+                font-size: 0.8em;
+                font-weight: 400;
+                color: rgba(255, 255, 255, 0.65);
+                text-transform: none !important;
+                letter-spacing: 0.05rem;
+                flex-shrink: 0 !important; /* Prevents text from crushing */
+            }
+            
+            .footer-brand {
+                color: #FFFFFF !important;
+                font-weight: 600;
+                text-decoration: none !important;
+                transition: color 0.25s ease;
+            }
+            
+            .footer-brand:hover {
+                color: #5C83EE !important;
+            }
+            
+            .footer-links {
+                display: flex !important;
+                flex-direction: row !important;
+                gap: 2rem !important;
+                flex-wrap: nowrap !important; /* Keeps all links together on one row */
+                text-transform: none !important;
+                font-family: 'Inter', sans-serif;
+                font-size: 0.8em;
+                font-weight: 400;
+                letter-spacing: 0.05rem;
+            }
+            
+            .footer-links a {
+                color: rgba(255, 255, 255, 0.65) !important;
+                text-decoration: none !important;
+                transition: color 0.25s ease;
+                white-space: nowrap !important; /* Keeps multi-word links whole */
+            }
+            
+            .footer-links a:hover {
+                color: #5C83EE !important;
+            }
+            
+            /* Clean adaptive stacking for smaller mobile screens */
+            @media (max-width: 736px) {
+                .footer-layout {
+                    flex-direction: column !important;
+                    flex-wrap: wrap !important;
+                    text-align: center !important;
+                    justify-content: center !important;
+                    gap: 1.25rem !important;
+                }
+                .footer-links {
+                    flex-wrap: wrap !important;
+                    justify-content: center !important;
+                    gap: 1.5rem !important;
+                }
+            }
+            
         </style>
         <noscript>
             <style>body {overflow: auto !important;}body::after {display: none !important;}.site-main > .inner {opacity: 1.0 !important;}.site-main {opacity: 1.0 !important;transform: none !important;transition: none !important;filter: none !important;}</style>
@@ -1579,6 +1653,19 @@
                             </div>
                         </div>
                     </div>
+                    <footer id="site-footer" class="container-component style-1 default full screen" style="min-height: auto;">
+                        <div class="wrapper">
+                            <div class="inner footer-layout">
+                                <div class="footer-links">
+                                    <a href="index.html" class="footer-brand">&copy; <script>document.write(new Date().getFullYear());</script> AppHive GmbH</a>
+                                    <a href="apps.html">Our Apps</a>
+                                    <a href="privacy.html">Privacy Policy</a>
+                                    <a href="terms.html">Terms of Service</a>
+                                    <a href="support.html">Support</a>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
                 </div>
             </div>
         </div>
