@@ -1440,6 +1440,7 @@
             /* 1. Stretch the wrapper to fill the full viewport height */
             #container05 {
                 align-items: stretch !important;
+                min-height: calc(100vh - 80px) !important;
             }
             
             
@@ -1469,6 +1470,83 @@
                 visibility: visible !important;
                 transform: none !important;
                 transition: none !important;
+            }
+            
+            /* Lock Header to the top of the window without pushing content */
+            #site-header {
+                position: fixed !important;
+                z-index: 999 !important;
+            }
+            
+            /* Custom Unified Responsive Header Container */
+            .header-container {
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                flex-wrap: nowrap !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                padding: 1.75rem var(--padding-horizontal) !important; /* Slightly tighter vertical padding than footer */
+                border-bottom: 1px solid rgba(255, 255, 255, 0.07); /* Subtle divider line */
+                background-color: rgba(20, 20, 23, 0.478) !important;
+                -webkit-backdrop-filter: blur(0.75rem) !important;
+                backdrop-filter: blur(0.75rem) !important;
+            }
+            
+            .header-brand {
+                font-family: 'Inter', sans-serif;
+                font-size: 0.85em;
+                color: #FFFFFF !important;
+                font-weight: 600;
+                text-decoration: none !important;
+                transition: color 0.25s ease;
+                letter-spacing: 0.05rem;
+                text-transform: none !important;
+            }
+            
+            .header-brand:hover {
+                color: #5C83EE !important;
+            }
+            
+            .header-links {
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                gap: 2rem !important;
+                flex-wrap: nowrap !important;
+                text-transform: none !important;
+                font-family: 'Inter', sans-serif;
+                font-size: 0.8em;
+                font-weight: 400;
+                letter-spacing: 0.05rem;
+                line-height: 1.2 !important;
+            }
+            
+            .header-links a {
+                color: rgba(255, 255, 255, 0.65) !important;
+                text-decoration: none !important;
+                transition: color 0.25s ease;
+                white-space: nowrap !important;
+            }
+            
+            .header-links a:hover {
+                color: #5C83EE !important;
+            }
+            
+            /* Responsive adaptive stacking for phones */
+            @media (max-width: 736px) {
+                .header-container {
+                    flex-direction: column !important;
+                    text-align: center !important;
+                    justify-content: center !important;
+                    gap: 1rem !important;
+                }
+                .header-links {
+                    flex-wrap: wrap !important;
+                    justify-content: center !important;
+                    gap: 1.25rem !important;
+                }
             }
             
             /* Custom Responsive Footer Layout - Force One Line */
@@ -1577,6 +1655,21 @@
         <div class="site-wrapper">
             <div class="site-main">
                 <div class="inner">
+                    <header id="site-header" class="container-component default full screen" style="min-height: auto; position: fixed">
+                        <div class="wrapper">
+                            <div class="inner">
+                                <div class="header-container">
+                                    <a href="index.html" class="header-brand">AppHive</a>
+                                    <nav class="header-links">
+                                        <a href="apps.html">Our Apps</a>
+                                        <a href="privacy.html">Privacy Policy</a>
+                                        <a href="terms.html">Terms of Service</a>
+                                        <a href="support.html">Support</a>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
                     <div id="container05" class="container-component instance-5 style-2 default full">
                         <div class="wrapper">
                             <div class="inner" data-onvisible-trigger="1">
